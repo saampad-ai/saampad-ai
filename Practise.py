@@ -289,7 +289,12 @@ with tab_pyq:
                 st.text_area("Your answer", key="single_text", height=100)
             if st.button("Check"):
                 if p["options"] and p["correct"]:
-                    st.success("Correct!") if pick == p["correct"] else st.error("Not quite." if pick else "You did not choose an option.")
+                    if pick == p["correct"]:
+                        st.success("Correct!")
+                    elif pick:
+                        st.error("Not quite.")
+                    else:
+                        st.error("You did not choose an option.")
                 st.markdown(f"**Correct answer:** {esc(s['answer'])}")
                 st.markdown(f"**Explanation:** {esc(s['explanation'])}")
 
