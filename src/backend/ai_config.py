@@ -1,5 +1,5 @@
 """
-AI provider configuration for sammpad.ai.
+AI provider configuration for AskAnujSir.
 
 API keys are read from environment variables (never hard-coded):
     groq   -> API_KEY_GROQ_ANUJ

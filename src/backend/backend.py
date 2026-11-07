@@ -1,7 +1,7 @@
 """
 backend.py
 ----------
-Unified, swappable AI backend for "sammpad.ai".
+Unified, swappable AI backend for "AskAnujSir".
 
 Supports three providers behind ONE function: get_ai_response().
 The caller never needs to know which provider is active -- it just

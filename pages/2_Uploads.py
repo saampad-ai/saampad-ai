@@ -16,15 +16,15 @@ if SRC_DIR not in sys.path:
     sys.path.insert(0, SRC_DIR)
 load_dotenv(os.path.join(PROJECT_ROOT, ".env"))
 
-from saampad_ai.ai_config import get_ai_config
-from saampad_ai.paths import ROOT
-from saampad_ai.pdf_to_pyq import append_to_database, parse_pdf_to_dataframe
-from saampad_ai.storage import (
+from backend.ai_config import get_ai_config
+from backend.paths import ROOT
+from backend.pdf_to_pyq import append_to_database, parse_pdf_to_dataframe
+from backend.storage import (
     clear_active_syllabus, get_active_syllabus_key, get_object_bytes,
     initialize_storage, list_objects, put_object, set_active_syllabus_key,
 )
-from saampad_ai.syllabus import validate_syllabus_pdf
-from saampad_ai.ui_components import apply_style, restore_session_query_params, sidebar_branding
+from backend.syllabus import validate_syllabus_pdf
+from backend.ui_components import apply_style, restore_session_query_params, sidebar_branding
 
 logger = logging.getLogger(__name__)
 LOGO = os.path.join(ROOT, "logo.png")
@@ -68,7 +68,7 @@ if kind.startswith("Past"):
         c1, c2 = st.columns([2, 1])
         chosen = c1.selectbox("Question paper", pdfs, format_func=lambda item: item["original_name"])
         year = c2.number_input("Exam year", 2015, 2035, 2025)
-        if st.button("ðŸ” Extract & Structure Questions", disabled=not cfg["api_key"]):
+        if st.button("Extract & Structure Questions", disabled=not cfg["api_key"]):
             bar = st.progress(0, text="Starting...")
             try:
                 st.session_state.parsed_df = parse_pdf_to_dataframe(

@@ -1,4 +1,4 @@
-﻿# Practise: local run and resolved issues
+# Practise: local run and resolved issues
 
 ## Run locally (Windows PowerShell)
 
@@ -34,7 +34,7 @@
 
 ## Earlier issues and how they were resolved
 
-- **Cluttered project root** — Application modules were moved into `src/saampad_ai/`;
+- **Cluttered project root** — Application modules were moved into `src/backend/`;
   Streamlit pages remain in `pages/`. The root entry point is `Practise.py`.
 - **Wrong syllabus selected based on file modification time** — Syllabus PDFs are stored
   in object storage. A user selects the active syllabus in **Uploads**, and the app checks
@@ -59,14 +59,17 @@
   messages are generic while detailed diagnostics go to server logs.
 - **Settings and uploads shared one screen** — AI provider, model, and API key controls
   are on **Settings**; file management is on **Uploads**.
+- **Old Saampad AI product branding** — User-facing copy, AI persona, and package
+  metadata now use `AskAnujSir`. The Python import package remains named `backend`.
 - **The sidebar displayed the generic name `app`** — The Streamlit entry point was renamed
   to `Practise.py`, which gives the default navigation item the product name.
 
 ## Remaining deployment considerations
 
 - **GitHub organization OAuth approval is a deployment prerequisite, not a code fix.**
-  The `saampad-ai` organization must approve Streamlit's OAuth app under its GitHub
-  organization settings. Approve Streamlit specifically if possible; disabling the
+  The GitHub organization is still named `saampad-ai`; its owner must approve
+  Streamlit's OAuth app in the organization settings. Approve Streamlit specifically
+  if possible; disabling the
   organization's OAuth restrictions grants broader access.
 - Sessions are anonymous and identified through IDs in the page URL. Anyone who has a
   session link can access that session; there is no account-based authentication yet.

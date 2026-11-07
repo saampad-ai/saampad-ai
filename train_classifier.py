@@ -17,9 +17,9 @@ if SRC_DIR not in sys.path:
     sys.path.insert(0, SRC_DIR)
 load_dotenv(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env"))
 
-from saampad_ai.pyq_engine import load_pyq_db
-from saampad_ai.classifier import train_topic_classifier
-from saampad_ai.storage import initialize_storage
+from backend.pyq_engine import load_pyq_db
+from backend.classifier import train_topic_classifier
+from backend.storage import initialize_storage
 
 if __name__ == "__main__":
     initialize_storage()

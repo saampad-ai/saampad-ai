@@ -4,15 +4,6 @@ import streamlit as st
 
 ACCENT = "#8FAAFF"
 
-TEAM = [
-    "Mr. Anuj Kumar, PGT CS",
-    "Mr. Dipayan Sarkar, PGT CS",
-    "Mr. Arkopal Ray, PGT CS",
-    "Ms. Payal Bhattacharjee, PGT CS",
-    "Ms. Mohana Bakshi, PGT CS",
-    "Ms. Madhulika Debnath, PGT CS",
-    "Mr. Aftab Alam Shahnawaz, PGT CS",
-]
 
 GLOBAL_CSS = f"""
 <style>
@@ -134,8 +125,7 @@ def sidebar_branding():
             st.image(logo, width=110)
         st.markdown("### Practise")
         st.caption("Helper for Class 12 Computer Science")
-        st.markdown("**Computer Science Team**")
-        st.markdown("\n".join(f"{i}. {n}" for i, n in enumerate(TEAM, 1)))
+
 
 
 def esc(text: str) -> str:

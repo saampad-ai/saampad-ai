@@ -76,13 +76,13 @@ def get_syllabus_text() -> str:
     return DEFAULT_SYLLABUS_TEXT
 
 
-def build_system_prompt(teacher_name: str = "the PGT Computer Science team") -> str:
+def build_system_prompt(teacher_name: str = "Anuj Sir") -> str:
     """
     This system prompt is what enforces syllabus restriction AND
     gentle redirection (never a flat refusal) for off-syllabus asks.
     """
     syllabus = get_syllabus_text()
-    return f"""You are "sammpad.ai", a friendly AI study companion for CBSE
+    return f"""You are "AskAnujSir", a friendly AI study companion for CBSE
 Class 11-12 Computer Science (Python) students, built by their teacher {teacher_name}.
 
 STRICT RULES:

@@ -15,22 +15,22 @@ SRC_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "src")
 if SRC_DIR not in sys.path:
     sys.path.insert(0, SRC_DIR)
 
-from saampad_ai.ai_config import get_ai_config
-from saampad_ai.backend import get_ai_response
-from saampad_ai.syllabus import build_system_prompt
-from saampad_ai.pyq_engine import (load_pyq_db, get_exact_pyq, generate_similar_question,
+from backend.ai_config import get_ai_config
+from backend.backend import get_ai_response
+from backend.syllabus import build_system_prompt
+from backend.pyq_engine import (load_pyq_db, get_exact_pyq, generate_similar_question,
                         get_cluster_plot_data, audit_coverage)
-from saampad_ai.sandbox import run_code
-from saampad_ai.agent import run_smart_practice_agent
-from saampad_ai.classifier import predict_topic
-from saampad_ai.association_rules import mine_topic_associations
-from saampad_ai.storage import (
+from backend.sandbox import run_code
+from backend.agent import run_smart_practice_agent
+from backend.classifier import predict_topic
+from backend.association_rules import mine_topic_associations
+from backend.storage import (
     delete_chat_session, initialize_storage, load_chat_messages, load_student_attempts,
     record_student_attempts, save_chat_turn,
 )
-from saampad_ai.question_format import parse_question
-from saampad_ai.paths import ROOT
-from saampad_ai.ui_components import (apply_style, sidebar_branding, render_question, option_label,
+from backend.question_format import parse_question
+from backend.paths import ROOT
+from backend.ui_components import (apply_style, sidebar_branding, render_question, option_label,
                            render_review_options, esc)
 
 logger = logging.getLogger(__name__)
@@ -92,7 +92,7 @@ tab_chat, tab_pyq, tab_agent, tab_code, tab_teacher = st.tabs(
 
 # ============================= CHAT =============================
 with tab_chat:
-    st.subheader("Ask Saampad anything about your CS syllabus")
+    st.subheader("Ask Anuj Sir anything about your CS syllabus")
     st.caption("Conversations are saved for this anonymous session. Anyone with this page link can access them; don't share it or enter sensitive personal information.")
     new_chat_col, delete_chat_col = st.columns(2)
     if new_chat_col.button("Start a new conversation"):

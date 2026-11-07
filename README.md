@@ -1,4 +1,4 @@
-# Practise — Computer Science study companion
+# AskAnujSir Practise — Computer Science study companion
 
 Streamlit app: syllabus-restricted chat, PYQ practice (MCQ / Assertion-Reason quiz), smart-practice agent, code sandbox, teacher tools.
 
@@ -66,7 +66,7 @@ included service runs one API worker; its rate counters are process-local. Use a
 rate limiter before running multiple service replicas.
 
 ## AI configuration
-No API selection on the main page. Open **Settings** to change provider/model and configure an API key. Default is **groq**; keys are read from the environment variables above. Defaults are defined in `src/saampad_ai/ai_config.py`.
+No API selection on the main page. Open **Settings** to change provider/model and configure an API key. Default is **groq**; keys are read from the environment variables above. Defaults are defined in `src/backend/ai_config.py`.
 
 ## Uploads
 Upload a past-year paper or syllabus PDF, then explicitly select the active syllabus. It must be a readable Computer Science syllabus covering both Class 11 and Class 12. Papers can be converted to questions (AI extraction → review table → save). Other documents, images, and files can also be stored in the bucket.
@@ -75,7 +75,7 @@ Upload a past-year paper or syllabus PDF, then explicitly select the active syll
 ```
 Practise.py            <- Streamlit entry point
 pages/                 <- Streamlit multipage screens
-src/saampad_ai/        <- application package and business logic
+src/backend/        <- application package and business logic
 train_classifier.py    <- classifier training command
 logo.png                 <- sidebar, chat avatar, and browser tab logo
 ```

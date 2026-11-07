@@ -11,9 +11,9 @@ if SRC_DIR not in sys.path:
     sys.path.insert(0, SRC_DIR)
 load_dotenv(os.path.join(PROJECT_ROOT, ".env"))
 
-from saampad_ai.ai_config import DEFAULT_PROVIDER, PROVIDERS, env_key, get_ai_config
-from saampad_ai.paths import ROOT
-from saampad_ai.ui_components import apply_style, restore_session_query_params, sidebar_branding
+from backend.ai_config import DEFAULT_PROVIDER, PROVIDERS, env_key, get_ai_config
+from backend.paths import ROOT
+from backend.ui_components import apply_style, restore_session_query_params, sidebar_branding
 
 LOGO = os.path.join(ROOT, "logo.png")
 st.set_page_config(page_title="Settings · Practise", page_icon=LOGO if os.path.exists(LOGO) else "⚙️", layout="wide")
